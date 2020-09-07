@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="items.xsd">
+<relations>
+	
+		<relation code="Customer2ReviewRelation" autocreate="true" localized="false">
+			<description>This saves state of checking address against the CAS Webservice.</description>
+			<sourceElement type="Customer" cardinality="one" qualifier="customer">
+				<modifiers initial="true" optional="true" />
+			</sourceElement>
+			<targetElement type="CustomerFeedbackReview" cardinality="many" qualifier="reviews">
+				<modifiers initial="true" optional="true" partof="true" />
+			</targetElement>
+		</relation>
+		</relations>
+		<itemtypes>
+			<itemtype code="CustomerFeedbackReview" autocreate="true" generate="true">
+				<description>Customer Review</description>
+				<deployment table="CustomerReviews" typecode="14041" />
+				<attributes>
+					<attribute qualifier="body" type="java.lang.String">
+						<description>review body</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="subject" type="java.lang.String">
+						<description>review subject</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			
+			
+	
+   </itemtypes>
+</items>

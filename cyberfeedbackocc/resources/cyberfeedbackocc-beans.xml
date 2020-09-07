@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+
+	
+	<bean class="org.cyber.feedback.data.CustomerFeedbackReviewData">
+		<property name="body" type="String"/>
+		<property name="subject" type="String"/>
+	</bean>
+	
+	<bean class="org.cyber.feedback.wsdto.CustomerFeedbackReviewWsDTO">
+		<property name="body" type="String"/>
+		<property name="subject" type="String"/>
+	</bean>
+	
+	<bean class="org.cyber.feedback.data.CustomerFeedbackReviewsData">
+		<property name="reviews" type="java.util.Collection&lt;org.cyber.feedback.data.CustomerFeedbackReviewData>"/>
+	</bean>
+	
+	<bean class="org.cyber.feedback.wsdto.CustomerFeedbackReviewsWsDTO">
+		<property name="reviews" type="java.util.Collection&lt;org.cyber.feedback.wsdto.CustomerFeedbackReviewWsDTO>"/>
+	</bean>
+
+</beans>

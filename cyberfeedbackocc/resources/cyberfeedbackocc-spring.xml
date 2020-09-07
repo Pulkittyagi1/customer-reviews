@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    
+    
+    <alias name="defaultCustomerFeedbackReviewService" alias="customerFeedbackReviewService"/>
+	<bean id="defaultCustomerFeedbackReviewService" class="org.cyber.feedback.service.impl.DefaultCustomerFeedbackReviewService">
+		<property name="userService" ref="userService"/>
+	</bean>
+	
+	<bean id="customerFeedbackReviewPopulator" class="org.cyber.feedback.populator.CustomerFeedbackReviewPopulator"/>
+	<bean id="customerFeedbackReviewConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.cyber.feedback.data.CustomerFeedbackReviewData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="customerFeedbackReviewPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	
+	
+	<alias name="defaultCustomerFeedbackReviewFacade" alias="customerFeedbackReviewFacade"/>
+	<bean id="defaultCustomerFeedbackReviewFacade" class="org.cyber.feedback.facade.impl.DefaultCustomerFeedbackReviewFacade">
+		<property name="customerFeedbackReviewConverter" ref="customerFeedbackReviewConverter"/>
+		<property name="customerFeedbackReviewService" ref="customerFeedbackReviewService"/>
+	</bean>
+
+</beans>
