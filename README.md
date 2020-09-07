@@ -14,17 +14,25 @@
 ## OCC Request Paths: ##
 
 ### OAuth request ###
-***Post:https://<server>/authorizationserver/oauth/token
+
+Post:https://<server>/authorizationserver/oauth/token
 sample request Body:
-client_id:trusted_client
-client_secret:12345
-grant_type:password
-username:keenreviewer14@hybris.com
-password:12345
+  
+  key         | value
+------------- | -------------
+client_id     | trusted_client
+client_secret | 12345
+grant_type    | password
+username      | keenreviewer14@hybris.com
+password      | 12345
 
 #### Get Reviews Request ###
-***GET: https://<server>/occ/v2/electronics/users/keenreviewer14@hybris.com
-sample HEADER:
-Authorization:bearer 713cf9b2-c6a0-4287-88c1-7c0e956a5a2f (get this using the above oauth call)
 
-***Note: autherization server is not in this repo, it is part of platform code.
+GET: https://<server>/occ/v2/electronics/users/keenreviewer14@hybris.com
+sample HEADER:
+    key       | value
+------------- | -------------
+Authorization | bearer 713cf9b2-c6a0-4287-88c1-7c0e956a5a2f
+
+
+Note: autherization server is not in this repo, it is part of platform code.
