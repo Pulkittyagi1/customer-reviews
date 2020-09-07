@@ -1,6 +1,6 @@
 # This Repository contains code for below Requirement: #
 
-## webservice replated ask ## 
+## webservice related ask ## 
 1) Create a new ItemType to model Customer feedback reviews which has one to many relation with customer type.
 2) expose it using webservices (OOTB oauth2 server inclused as part of platform code)
 3) Code written in TDD way.
