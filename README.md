@@ -15,7 +15,8 @@
 
 ### OAuth request ###
 
-Post:https://<server>/authorizationserver/oauth/token
+Post:https://server/authorizationserver/oauth/token
+
 sample request Body:
   
   key         | value
@@ -28,7 +29,8 @@ password      | 12345
 
 #### Get Reviews Request ###
 
-GET: https://<server>/occ/v2/electronics/users/keenreviewer14@hybris.com
+GET: https://server/occ/v2/electronics/users/keenreviewer14@hybris.com
+
 sample HEADER:
     key       | value
 ------------- | -------------
