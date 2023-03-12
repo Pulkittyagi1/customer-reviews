@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print greeting
-        run: echo "Hello Pulkit!"
+        run: |
+          echo "Hello Pulkit!"
+          echo " use | to multiple lines of script"
       - name: print good bye
         run: echo "bye pulkit"
